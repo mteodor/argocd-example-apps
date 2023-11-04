@@ -54,3 +54,4 @@ spec:
         automated: {}
         syncOptions:
         - CreateNamespace=true
+        - Prune=true
