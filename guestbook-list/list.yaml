@@ -335,7 +335,7 @@ spec:
         path: guestbook-list/guestbook
       destination:
         server: '{{url}}'
-        namespace: ''
+        namespace: '{{cluster}}-guestbook'
       syncPolicy:
         automated:
           selfHeal: true
