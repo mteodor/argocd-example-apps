@@ -246,6 +246,86 @@ spec:
             url: https://kubernetes.default.svc
           - cluster: mluster20
             url: https://kubernetes.default.svc
+          - cluster: mankrit1
+            url: https://kubernetes.default.svc
+          - cluster: mankrit2
+            url: https://kubernetes.default.svc
+          - cluster: mankrit3
+            url: https://kubernetes.default.svc
+          - cluster: mankrit4
+            url: https://kubernetes.default.svc
+          - cluster: mankrit5
+            url: https://kubernetes.default.svc
+          - cluster: mankrit6
+            url: https://kubernetes.default.svc
+          - cluster: mankrit7
+            url: https://kubernetes.default.svc
+          - cluster: mankrit8
+            url: https://kubernetes.default.svc
+          - cluster: mankrit9
+            url: https://kubernetes.default.svc
+          - cluster: mankrit10
+            url: https://kubernetes.default.svc
+          - cluster: mankrit11
+            url: https://kubernetes.default.svc
+          - cluster: mankrit12
+            url: https://kubernetes.default.svc
+          - cluster: mankrit13
+            url: https://kubernetes.default.svc
+          - cluster: mankrit14
+            url: https://kubernetes.default.svc
+          - cluster: mankrit15
+            url: https://kubernetes.default.svc
+          - cluster: mankrit16
+            url: https://kubernetes.default.svc
+          - cluster: mankrit17
+            url: https://kubernetes.default.svc
+          - cluster: mankrit18
+            url: https://kubernetes.default.svc
+          - cluster: mankrit19
+            url: https://kubernetes.default.svc
+          - cluster: mankrit20
+            url: https://kubernetes.default.svc
+          - cluster: mankrit21
+            url: https://kubernetes.default.svc
+          - cluster: mankrit22
+            url: https://kubernetes.default.svc
+          - cluster: mankrit23
+            url: https://kubernetes.default.svc
+          - cluster: mankrit24
+            url: https://kubernetes.default.svc
+          - cluster: mankrit25
+            url: https://kubernetes.default.svc
+          - cluster: mankrit26
+            url: https://kubernetes.default.svc
+          - cluster: mankrit27
+            url: https://kubernetes.default.svc
+          - cluster: mankrit28
+            url: https://kubernetes.default.svc
+          - cluster: mankrit29
+            url: https://kubernetes.default.svc
+          - cluster: mankrit30
+            url: https://kubernetes.default.svc
+          - cluster: mankrit31
+            url: https://kubernetes.default.svc
+          - cluster: mankrit32
+            url: https://kubernetes.default.svc
+          - cluster: mankrit33
+            url: https://kubernetes.default.svc
+          - cluster: mankrit34
+            url: https://kubernetes.default.svc
+          - cluster: mankrit35
+            url: https://kubernetes.default.svc
+          - cluster: mankrit36
+            url: https://kubernetes.default.svc
+          - cluster: mankrit37
+            url: https://kubernetes.default.svc
+          - cluster: mankrit38
+            url: https://kubernetes.default.svc
+          - cluster: mankrit39
+            url: https://kubernetes.default.svc
+          - cluster: mankrit40
+            url: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{cluster}}-guestbook'
