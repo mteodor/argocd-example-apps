@@ -126,6 +126,126 @@ spec:
             url: https://kubernetes.default.svc
           - cluster: muster20
             url: https://kubernetes.default.svc
+          - cluster: sluster1
+            url: https://kubernetes.default.svc
+          - cluster: sluster2
+            url: https://kubernetes.default.svc
+          - cluster: sluster3
+            url: https://kubernetes.default.svc
+          - cluster: sluster4
+            url: https://kubernetes.default.svc
+          - cluster: sluster5
+            url: https://kubernetes.default.svc
+          - cluster: sluster6
+            url: https://kubernetes.default.svc
+          - cluster: sluster7
+            url: https://kubernetes.default.svc
+          - cluster: sluster8
+            url: https://kubernetes.default.svc
+          - cluster: sluster9
+            url: https://kubernetes.default.svc
+          - cluster: sluster10
+            url: https://kubernetes.default.svc
+          - cluster: sluster11
+            url: https://kubernetes.default.svc
+          - cluster: sluster12
+            url: https://kubernetes.default.svc
+          - cluster: sluster13
+            url: https://kubernetes.default.svc
+          - cluster: sluster14
+            url: https://kubernetes.default.svc
+          - cluster: sluster15
+            url: https://kubernetes.default.svc
+          - cluster: sluster16
+            url: https://kubernetes.default.svc
+          - cluster: sluster17
+            url: https://kubernetes.default.svc
+          - cluster: sluster18
+            url: https://kubernetes.default.svc
+          - cluster: sluster19
+            url: https://kubernetes.default.svc
+          - cluster: sluster20
+            url: https://kubernetes.default.svc
+          - cluster: sluster21
+            url: https://kubernetes.default.svc
+          - cluster: sluster22
+            url: https://kubernetes.default.svc
+          - cluster: sluster23
+            url: https://kubernetes.default.svc
+          - cluster: sluster24
+            url: https://kubernetes.default.svc
+          - cluster: sluster25
+            url: https://kubernetes.default.svc
+          - cluster: sluster26
+            url: https://kubernetes.default.svc
+          - cluster: sluster27
+            url: https://kubernetes.default.svc
+          - cluster: sluster28
+            url: https://kubernetes.default.svc
+          - cluster: sluster29
+            url: https://kubernetes.default.svc
+          - cluster: sluster30
+            url: https://kubernetes.default.svc
+          - cluster: sluster31
+            url: https://kubernetes.default.svc
+          - cluster: sluster32
+            url: https://kubernetes.default.svc
+          - cluster: sluster33
+            url: https://kubernetes.default.svc
+          - cluster: sluster34
+            url: https://kubernetes.default.svc
+          - cluster: sluster35
+            url: https://kubernetes.default.svc
+          - cluster: sluster36
+            url: https://kubernetes.default.svc
+          - cluster: sluster37
+            url: https://kubernetes.default.svc
+          - cluster: sluster38
+            url: https://kubernetes.default.svc
+          - cluster: sluster39
+            url: https://kubernetes.default.svc
+          - cluster: sluster40
+            url: https://kubernetes.default.svc
+          - cluster: mluster1
+            url: https://kubernetes.default.svc
+          - cluster: mluster2
+            url: https://kubernetes.default.svc
+          - cluster: mluster3
+            url: https://kubernetes.default.svc
+          - cluster: mluster4
+            url: https://kubernetes.default.svc
+          - cluster: mluster5
+            url: https://kubernetes.default.svc
+          - cluster: mluster6
+            url: https://kubernetes.default.svc
+          - cluster: mluster7
+            url: https://kubernetes.default.svc
+          - cluster: mluster8
+            url: https://kubernetes.default.svc
+          - cluster: mluster9
+            url: https://kubernetes.default.svc
+          - cluster: mluster10
+            url: https://kubernetes.default.svc
+          - cluster: mluster11
+            url: https://kubernetes.default.svc
+          - cluster: mluster12
+            url: https://kubernetes.default.svc
+          - cluster: mluster13
+            url: https://kubernetes.default.svc
+          - cluster: mluster14
+            url: https://kubernetes.default.svc
+          - cluster: mluster15
+            url: https://kubernetes.default.svc
+          - cluster: mluster16
+            url: https://kubernetes.default.svc
+          - cluster: mluster17
+            url: https://kubernetes.default.svc
+          - cluster: mluster18
+            url: https://kubernetes.default.svc
+          - cluster: mluster19
+            url: https://kubernetes.default.svc
+          - cluster: mluster20
+            url: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{cluster}}-guestbook'
