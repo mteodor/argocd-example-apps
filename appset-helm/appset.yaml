@@ -46,6 +46,7 @@ spec:
     spec:
       project: default
       source:
+        chart: grafana
         repoURL: https://grafana.github.io/helm-charts
         targetRevision: 7.0.8
         helm:
@@ -1617,7 +1618,6 @@ spec:
                 #     data:
                 #       - key: grafana-admin-password
                 #         name: adminPassword
-          chart: grafana
       syncPolicy:
         automated:
           selfHeal: true
