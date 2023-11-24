@@ -47,11 +47,11 @@ spec:
       project: default
       source:
         repoURL: https://grafana.github.io/helm-charts
-          targetRevision: 7.0.8
-          helm:
-            valueFiles:
+        targetRevision: 7.0.8
+        helm:
+          valueFiles:
               - values.yaml
-            values: >-
+          values: >-
               global:
                 # -- Overrides the Docker registry globally for all images
                 imageRegistry: null
@@ -1619,9 +1619,13 @@ spec:
                 #         name: adminPassword
           chart: grafana
       syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
         syncOptions:
-          - Validate=true
           - CreateNamespace=true
+          - Prune=true
+          - PruneLast=true
       destination:
         server: '{{url}}'
-        namespace: mirko-test2
+        namespace: '{{cluster}}-grafana'
