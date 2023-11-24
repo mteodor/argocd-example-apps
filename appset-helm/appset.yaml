@@ -44,7 +44,7 @@ spec:
     metadata:
       name: '{{cluster}}-grafana'
     spec:
-      project: default
+      project: mirkotest
       source:
         chart: grafana
         repoURL: https://grafana.github.io/helm-charts
