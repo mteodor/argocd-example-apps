@@ -17,7 +17,7 @@ spec:
       project: ec06c858
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
-        targetRevision: HEAD
+        targetRevision: rollouts
         path: guestbook/{{cluster}}
       syncPolicy:
         syncOptions:
@@ -25,4 +25,4 @@ spec:
          - CreateNamespace=true
       destination:
         server: '{{url}}'
-        namespace: mirko-test4
+        namespace: rollouts
