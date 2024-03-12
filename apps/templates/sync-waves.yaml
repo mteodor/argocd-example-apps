@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: sync-waves
     server: {{ .Values.spec.destination.server }}
-  project: ec06c858
+  project: ec06c85
   source:
     path: sync-waves
     repoURL: {{ .Values.spec.source.repoURL }}
