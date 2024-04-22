@@ -10,7 +10,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-guestbook
+    namespace: mirko-namespaced
     server: {{ .Values.spec.destination.server }}
   project: 14a3dc9e
   source:
