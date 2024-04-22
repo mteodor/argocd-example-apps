@@ -1,28 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: appofapps
 spec:
   syncPolicy:
     preserveResourcesOnDeletion: true
-  generators:
-    - list:
-        elements:
-          - cluster: engineering-dev
-            url: https://kubernetes.default.svc
   template:
     metadata:
-      name: '{{cluster}}-guestbook'
+      name: 'appofapps'
     spec:
       project: 14a3dc9e
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
         targetRevision: HEAD
-        path: guestbook/{{cluster}}
+        path: apps
       syncPolicy:
         syncOptions:
          - Validate=true     
          - CreateNamespace=true
       destination:
         server: '{{url}}'
-        namespace: mirko-test4
+        namespace: mirko-namespaced
