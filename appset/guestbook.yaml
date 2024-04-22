@@ -13,6 +13,9 @@ spec:
   template:
     metadata:
       name: 'guestbook'
+      labels:
+         harness.io/envRef: test
+         harness.io/serviceRef: test
     spec:
       project: ad5599b7
       source:
