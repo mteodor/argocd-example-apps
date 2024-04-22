@@ -12,7 +12,7 @@ spec:
     preserveResourcesOnDeletion: true
   template:
     metadata:
-      name: 'appofapps'
+      name: 'guestbook'
     spec:
       project: ad5599b7
       source:
