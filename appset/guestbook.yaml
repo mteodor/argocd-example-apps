@@ -8,13 +8,13 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: engineering-dev
+          - cluster: engineering-test
             url: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{cluster}}-guestbook'
     spec:
-      project: default
+      project: f6bd2309
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
         targetRevision: HEAD
