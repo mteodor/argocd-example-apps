@@ -5,7 +5,7 @@ metadata:
   namespace: mirko-cbp-test
 spec:
   syncPolicy:
-    preserveResourcesOnDeletion: false
+    preserveResourcesOnDeletion: true
   generators:
     - list:
         elements:
