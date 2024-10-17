@@ -21,17 +21,15 @@ spec:
     spec:
       project: "5b02f9dc"
       source:
-        chart: grafana
+        chart: fluent-bit
         repoURL: https://grafana.github.io/helm-charts
-        targetRevision: 7.0.8
+        targetRevision: 2.6.0
         helm:
-          values: >-
-              replicas: 1
-              autoscaling:
-                enabled: false
-                minReplicas: 1
-                maxReplicas: 5
-                targetCPU: "60"
+          valueFiles:
+            - values.yaml
+          values: |-
+            config:
+              port: 2020
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
