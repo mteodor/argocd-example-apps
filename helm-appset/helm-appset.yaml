@@ -16,7 +16,7 @@ spec:
     metadata:
       name: '{{.path.basename}}'
     spec:
-      project: "5b02f9dc"
+      project: 5b02f9dc
       source:
         chart: nginx
         repoURL: https://charts.bitnami.com/bitnami
