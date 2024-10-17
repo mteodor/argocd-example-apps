@@ -22,7 +22,7 @@ spec:
         repoURL: https://charts.bitnami.com/bitnami
         helm:
           valueFiles:
-          - '{{.path.path}}'/values.yaml
+          - '{{.path.path}}/values.yaml'
       targetRevision: 18.2.2
       destination:
         server: https://kubernetes.default.svc
