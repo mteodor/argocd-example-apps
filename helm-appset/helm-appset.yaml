@@ -16,9 +16,8 @@ spec:
     metadata:
       name: '{{.path.basename}}'
       labels:
-        harness.io/envRef: '{{envTag}}'
-        harness.io/serviceRef: '{{serviceTag}}'
-        harness.io/buildRef: '{{releaseTag}}'
+        harness.io/envRef: Prod
+        harness.io/serviceRef: helmappset
     spec:
       project: "5b02f9dc"
       source:
