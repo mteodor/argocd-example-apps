@@ -25,8 +25,6 @@ spec:
         repoURL: https://grafana.github.io/helm-charts
         targetRevision: 7.0.8
         helm:
-          valueFiles:
-              - values.yaml
           values: >-
               replicas: 1              
               autoscaling:
