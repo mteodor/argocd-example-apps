@@ -20,7 +20,7 @@ spec:
         harness.io/serviceRef: helmappset
     spec:
       project: "5b02f9dc"
-ource:
+      source:
         chart: grafana
         repoURL: https://grafana.github.io/helm-charts
         targetRevision: 7.0.8
