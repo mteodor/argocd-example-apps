@@ -24,12 +24,6 @@ spec:
         chart: fluent-bit
         repoURL: https://grafana.github.io/helm-charts
         targetRevision: 2.6.0
-        helm:
-          valueFiles:
-            - values.yaml
-          values: |-
-            config:
-              port: 3333
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
