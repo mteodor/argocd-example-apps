@@ -1,2 +1,2 @@
 containerPorts:
-  http: 8084
+  http: <+pipeline.variables.httpPort>
