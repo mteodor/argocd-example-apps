@@ -1,2 +1,2 @@
 containerPorts:
-  http: <+pipeline.variables.httpPort>
+  http: "<+pipeline.variables.httpPort>"
