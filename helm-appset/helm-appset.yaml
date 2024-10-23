@@ -29,7 +29,7 @@ spec:
             - values.yaml
           values: |-
             config:
-              port: '{{.cluster.port}}'
+              port: '{{cluster.port}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
