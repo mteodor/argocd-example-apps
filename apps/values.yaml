@@ -1,6 +1,6 @@
 prefix: name
 spec:
-  project: default
+  project: 5b02f9dc
   destination:
     server: https://kubernetes.default.svc
   source:
