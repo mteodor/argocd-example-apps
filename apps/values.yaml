@@ -1,3 +1,4 @@
+prefix: name
 spec:
   project: default
   destination:
