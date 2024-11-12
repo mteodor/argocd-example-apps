@@ -1,2 +1,2 @@
 containerPorts:
-  http: 8086
+  http: 8081
