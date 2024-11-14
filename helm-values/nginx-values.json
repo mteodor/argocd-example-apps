@@ -1,0 +1,5 @@
+{
+  "containerPorts": {
+     "http":8082
+  }
+}
