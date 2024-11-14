@@ -1,2 +1,2 @@
 containerPorts:
-  http: "1234"
+  http: "8888"
