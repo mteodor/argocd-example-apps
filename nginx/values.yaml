@@ -137,7 +137,7 @@ nodeAffinityPreset:
   type: ""
   key: ""
 containerPorts:
-  http: "9999"
+  http: "3333"
   https: 8443
 autoscaling:
   maxReplicas: ""
