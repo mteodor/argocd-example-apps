@@ -16,14 +16,13 @@ spec:
       name: '{{.path.basename}}'
     spec:
       project: 8e143fca
-      # sources:
-      #   - repoURL: https://github.com/mteodor/argocd-example-apps
-      #     targetRevision: syncstep-multisource
-      #     path: helm-nginx
-      source:
-        repoURL: https://charts.bitnami.com/bitnami
-        targetRevision: 18.1.2
-        chart: nginx
+      sources:
+        - repoURL: https://github.com/mteodor/argocd-example-apps
+          targetRevision: syncstep-multisource
+          path: helm-nginx
+        - repoURL: https://charts.bitnami.com/bitnami
+          targetRevision: 18.1.2
+          chart: nginx
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
