@@ -25,7 +25,7 @@ spec:
           chart: nginx
           helm:
             valueFiles:
-            - $values/'{{.path.path}}/values.yaml'
+            - $values/{{.path.path}}/values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
