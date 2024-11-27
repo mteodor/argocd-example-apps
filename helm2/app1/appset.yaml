@@ -13,7 +13,7 @@ spec:
           - path: helm2/app1/*/*/values.yaml
   template:
     metadata:
-      name: {{.path.basename}}}
+      name: {{.path.basename}}
     spec:
       project: 8e143fca
       sources:
