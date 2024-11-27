@@ -12,9 +12,7 @@ spec:
   template:
     metadata:
       name: multisource-{{path.basename}}}
-      labels:
-        harness.io/envRef: "{{envTag}}"
-        harness.io/serviceRef: "{{serviceTag}}"
+
     spec:
       project: 8e143fca
       sources:
