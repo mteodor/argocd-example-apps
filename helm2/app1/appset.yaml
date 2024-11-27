@@ -11,7 +11,7 @@ spec:
       - path: "helm2/app1/*/*/values.yaml"
   template:
     metadata:
-      name: 'multisource-{{cluster.name}}'
+      name: 'multisource-{{path.basename}}}'
       labels:
         harness.io/envRef: '{{envTag}}'
         harness.io/serviceRef: '{{serviceTag}}'
