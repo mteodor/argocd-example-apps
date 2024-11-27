@@ -11,7 +11,7 @@ spec:
           - path: helm2/app1/*/*/values.yaml
   template:
     metadata:
-      name: multisource-{{path.basename}}}
+      name: {{path.basename}}}
 
     spec:
       project: 8e143fca
@@ -24,6 +24,6 @@ spec:
           chart: nginx
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{syncstep-multisource}}-{{path.basename}}"
+        namespace: {{path.basename}}
       syncPolicy:
         automated: {}
