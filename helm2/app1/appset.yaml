@@ -1,40 +1,31 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: helm-k8s-app
+  name: multisource-mteodor-appset
 spec:
-  goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: https://github.com/wings-software/gitops-automation.git
-      revision: syncstepautomation-mirko
+      repoURL: https://github.com/mteodor/argocd-example-apps
+      revision: syncstep-multisource
       files:
-      - path: "helm2/app1/*/*/config.json"
+      - path: "helm2/app1/*/*/values.yaml"
   template:
     metadata:
-      name: syncstep-automation-app-{{.cluster.name}}
+      name: 'multisource-{{cluster.name}}'
       labels:
-        harness.io/envRef: '{{.envTag}}'
-        harness.io/serviceRef: '{{.serviceTag}}'
-        harness.io/buildRef: '{{.releaseTag}}'
+        harness.io/envRef: '{{envTag}}'
+        harness.io/serviceRef: '{{serviceTag}}'
     spec:
-      project: 5b02f9dc
-      source:
-        chart: fluent-bit
-        repoURL: https://grafana.github.io/helm-charts
-        targetRevision: 2.6.0
-        helm:
-          values: |-
-            config:
-              port: '{{.cluster.port}}'
-              path: '{{.path.path}}'
-              basename: '{{.path.basename}}'
+      project: 8e143fca
+      sources:
+      - repoURL: https://github.com/mteodor/argocd-example-apps
+        targetRevision: syncstep-multisource
+        path: helm-nginx
+      - repoURL: https://charts.bitnami.com/bitnami
+        targetRevision: 18.1.2
+        chart: nginx
       destination:
-        server: '{{.cluster.address}}'
-        namespace: '{{.envTag}}'
+        server: https://kubernetes.default.svc
+        namespace: '{{syncstep-multisource}}-{{path.basename}}'
       syncPolicy:
-        syncOptions:
-         - Validate=true     
-         - CreateNamespace=true
-
+        automated: {}
