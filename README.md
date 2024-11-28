@@ -5,6 +5,8 @@ to register this repository to your ArgoCD instance, or fork this repo and push 
 to explore ArgoCD and GitOps!
 
 
+
+
 | Application | Description |
 |-------------|-------------|
 | [guestbook](guestbook/) | A hello word guestbook app as plain YAML |
