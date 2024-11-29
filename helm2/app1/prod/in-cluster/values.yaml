@@ -1,4 +1,4 @@
-envTag: Prod
+envTag: prod-multisource
 serviceTag: multisource
 containerPort:
   http: 80
