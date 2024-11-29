@@ -19,16 +19,17 @@ spec:
         harness.io/serviceRef: '{{.serviceTag}}'
     spec:
       project: 36f579d0
-      sources:
-        - repoURL: https://github.com/mteodor/argocd-example-apps
-          targetRevision: syncstep-multisource
-          ref: values
-        - repoURL: https://charts.bitnami.com/bitnami
+      # sources:
+      #   # - repoURL: https://github.com/mteodor/argocd-example-apps
+      #   #   targetRevision: syncstep-multisource
+      #   #   ref: values
+        source:
+          repoURL: https://charts.bitnami.com/bitnami
           targetRevision: 18.1.2
           chart: nginx
-          helm:
-            valueFiles:
-            - $values/{{.path.path}}/values.yaml
+          # helm:
+          #   valueFiles:
+          #   - $values/{{.path.path}}/values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
