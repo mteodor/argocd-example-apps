@@ -30,4 +30,7 @@ spec:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
       syncPolicy:
+        syncOptions:
+         - Validate=true     
+         - CreateNamespace=true
         automated: {}
