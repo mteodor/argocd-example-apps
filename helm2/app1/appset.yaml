@@ -17,7 +17,6 @@ spec:
       labels:
         harness.io/envRef: '{{.envTag}}'
         harness.io/serviceRef: '{{.serviceTag}}'
-        harness.io/buildRef: '{{.releaseTag}}'
     spec:
       project: 36f579d0
       sources:
