@@ -1,8 +1,7 @@
 cluster:
-  address: https://kubernetes.default.svc
-  name: cluster11
-envTag: prod-multisource
-serviceTag: multisource
+  address: "https://kubernetes.default.svc"
+  name: "cluster11"
+envTag: "prod-multisource"
+serviceTag: "multisource"
 containerPort:
   http: 80
-
