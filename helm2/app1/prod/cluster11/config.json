@@ -1,8 +1,8 @@
 {
   "cluster" : {
-    "name" : "cluster11",
     "address" : "https://35.233.139.33",
-    "port" : "5450"
+    "port" : "5450",
+    "name" : "cluster11"
   },
   "releaseTag" : "1.15",
   "envTag" : "prod",
