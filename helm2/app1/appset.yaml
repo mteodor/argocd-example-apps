@@ -15,7 +15,7 @@ spec:
     metadata:
       name: '{{.path.basename}}'
     spec:
-      project: 8e143fca
+      project: 36f579d0
       sources:
         - repoURL: https://github.com/mteodor/argocd-example-apps
           targetRevision: syncstep-multisource
