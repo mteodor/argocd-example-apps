@@ -1,3 +1,6 @@
+cluster:
+  "address": https://kubernetes.default.svc
+  "name": "in-cluster"
 envTag: prod-multisource
 serviceTag: multisource
 containerPort:
