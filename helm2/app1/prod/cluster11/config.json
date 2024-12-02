@@ -9,6 +9,6 @@
   "replicas" : "1",
   "serviceTag" : "helm",
   "containerPort" : {
-    "http" : "1233"
+    "http" : "1235"
   }
 }
