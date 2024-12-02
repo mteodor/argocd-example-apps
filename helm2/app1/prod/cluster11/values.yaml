@@ -4,4 +4,4 @@ cluster:
 envTag: "prod"
 serviceTag: "multisource"
 containerPort:
-  http: "4444.0"
+  http: "2222"
