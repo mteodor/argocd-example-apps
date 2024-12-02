@@ -31,7 +31,7 @@ spec:
           #   valueFiles:
           #   - $values/{{.path.path}}/values.yaml
       destination:
-        server: https://kubernetes.default.svc
+        name: cluster11
         namespace: '{{.path.basename}}'
       syncPolicy:
         syncOptions:
