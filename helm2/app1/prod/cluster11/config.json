@@ -7,5 +7,8 @@
   "releaseTag" : "1.15",
   "envTag" : "prod",
   "replicas" : "1",
-  "serviceTag" : "helm"
+  "serviceTag" : "helm",
+  "containerPort" : {
+    "http" : "1234"
+  }
 }
