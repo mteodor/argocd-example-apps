@@ -29,7 +29,7 @@ spec:
         chart: nginx
           helm:
             valueFiles:
-            - '$values/{{.path.path}}/values.yaml'
+            - $values/'{{.path.path}}'/values.yaml
       destination:
         name: cluster11
         namespace: '{{.path.basename}}'
