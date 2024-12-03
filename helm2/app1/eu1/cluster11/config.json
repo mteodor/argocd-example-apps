@@ -5,7 +5,7 @@
     "name" : "cluster11"
   },
   "releaseTag" : "1.15",
-  "envTag" : "prod",
+  "envTag" : "eu1",
   "replicas" : "1",
   "serviceTag" : "helm",
   "containerPort" : {

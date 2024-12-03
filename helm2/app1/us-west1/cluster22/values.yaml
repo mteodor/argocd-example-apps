@@ -1,0 +1,6 @@
+cluster:
+  name: "cluster22"
+envTag: "uswest1"
+serviceTag: "multisource"
+containerPort:
+  http: 80
