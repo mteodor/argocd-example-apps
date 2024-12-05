@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: multisource-mteodor-appset
+  name: {{ .Values.name }}-appset
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
