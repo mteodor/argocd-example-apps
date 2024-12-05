@@ -1,4 +1,7 @@
 prefix: name
+namespace: argocd
+helmGuestbook: false
+helmHooks: false
 spec:
   project: 5b02f9dc
   destination:
