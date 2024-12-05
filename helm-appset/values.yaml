@@ -1,4 +1,5 @@
 prefix: name
+revision: syncstep-multisource
 namespace: argocd
 spec:
   project: 5b02f9dc
