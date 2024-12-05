@@ -13,7 +13,7 @@ spec:
           - path: helm2/app1/*/*/values.yaml
   template:
     metadata:
-      name: {{.path.basename}}
+      name: '{{.path.basename}}'
       labels:
         harness.io/envRef: '{{.envTag}}'
         harness.io/serviceRef: '{{.serviceTag}}'
@@ -28,7 +28,7 @@ spec:
           chart: nginx
           helm:
             valueFiles:
-            - $values/{{.path.path}}/values.yaml
+            - $values/'{{.path.path}}'/values.yaml
       destination:
         name: '{{.cluster.name}}'
         namespace: '{{.path.basename}}'
