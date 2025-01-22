@@ -3,4 +3,4 @@ cluster:
 envTag: "uswest1"
 serviceTag: "multisource"
 containerPorts:
-  http: "2234"
+  http: "3234"
