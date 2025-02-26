@@ -9,6 +9,6 @@
   "replicas" : "1",
   "serviceTag" : "monitoring",
   "containerPorts" : {
-    "http" : "1234"
+    "http" : 1234
   }
 }
