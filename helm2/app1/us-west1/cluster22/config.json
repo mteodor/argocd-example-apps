@@ -8,4 +8,7 @@
   "envTag" : "uswest1",
   "replicas" : "1",
   "serviceTag" : "helm"
+  "containerPorts" : {
+    "http" : "1234"
+  }
 }
