@@ -8,7 +8,7 @@
   "envTag" : "eu1",
   "replicas" : "1",
   "serviceTag" : "helm",
-  "containerPort" : {
+  "containerPorts" : {
     "http" : "1234"
   }
 }
