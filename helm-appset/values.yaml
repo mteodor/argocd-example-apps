@@ -1,6 +1,7 @@
 prefix: name
 revision: syncstep-multisource
 namespace: argocd
+replicas: 1
 spec:
   project: 5b02f9dc
   destination:
