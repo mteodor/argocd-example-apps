@@ -1,6 +1,6 @@
 namespace: "argocd"
 prefix: "name"
-replicas: 2
+replicas: 3
 spec:
   destination:
     server: "https://kubernetes.default.svc"
