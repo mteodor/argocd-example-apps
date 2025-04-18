@@ -1,11 +1,11 @@
-prefix: name
-revision: syncstep-multisource
-namespace: argocd
-replicas: 1
+namespace: "argocd"
+prefix: "name"
+replicas: 2
 spec:
-  project: 5b02f9dc
   destination:
-    server: https://kubernetes.default.svc
+    server: "https://kubernetes.default.svc"
+  project: "5b02f9dc"
   source:
-    repoURL: https://github.com/mteodor/argocd-example-apps
-    targetRevision: HEAD
+    repoURL: "https://github.com/mteodor/argocd-example-apps"
+    targetRevision: "HEAD"
+revision: "syncstep-multisource"
