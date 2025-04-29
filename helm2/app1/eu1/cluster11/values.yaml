@@ -1,6 +1,7 @@
 cluster:
   name: "cluster11"
 envTag: "eu1"
-serviceTag: "multisource"
 containerPorts:
   http: 81
+test: "123"
+serviceTag: "multisource"
