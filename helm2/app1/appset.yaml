@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: helm-k8s-app
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: https://github.com/wings-software/gitops-automation.git
+      revision: syncstepautomation-mirko
+      files:
+      - path: "helm2/app1/*/*/config.json"
+  template:
+    metadata:
+      name: syncstep-automation-app-{{.cluster.name}}
+      labels:
+        harness.io/envRef: '{{.envTag}}'
+        harness.io/serviceRef: '{{.serviceTag}}'
+        harness.io/buildRef: '{{.releaseTag}}'
+    spec:
+      project: 5b02f9dc
+      source:
+        chart: fluent-bit
+        repoURL: https://grafana.github.io/helm-charts
+        targetRevision: 2.6.0
+        helm:
+          values: |-
+            config:
+              port: '{{.cluster.port}}'
+              path: '{{.path.path}}'
+              basename: '{{.path.basename}}'
+      destination:
+        server: '{{.cluster.address}}'
+        namespace: '{{.envTag}}'
+      syncPolicy:
+        syncOptions:
+         - Validate=true     
+         - CreateNamespace=true
+
