@@ -16,7 +16,7 @@ spec:
       name: '{{.path.basename}}'
       labels:
         harness.io/envRef: test
-        harness.io/serviceRef: test2
+        harness.io/serviceRef: multisource
     spec:
       project: 522b581b
       sources:
