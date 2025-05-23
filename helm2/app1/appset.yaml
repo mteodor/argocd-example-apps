@@ -15,7 +15,7 @@ spec:
     metadata:
       name: '{{.path.basename}}'
       labels:
-        harness.io/envRef: test
+        harness.io/envRef: appset
         harness.io/serviceRef: multisource
     spec:
       project: 522b581b
