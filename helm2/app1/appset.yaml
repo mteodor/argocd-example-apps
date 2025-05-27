@@ -8,7 +8,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/mteodor/argocd-example-apps
-        revision: syncstep-multisource
+        revision: gitopsautomation-mirko-test
         files:
           - path: helm2/app1/*/*/values.yaml
   template:
@@ -18,10 +18,10 @@ spec:
         harness.io/envRef: '{{.envTag}}'
         harness.io/serviceRef: '{{.serviceTag}}'
     spec:
-      project: 522b581b
+      project: 4be60204
       sources:
         - repoURL: https://github.com/mteodor/argocd-example-apps
-          targetRevision: syncstep-multisource
+          targetRevision: gitopsautomation-mirko-test
           ref: values
         - repoURL: https://charts.bitnami.com/bitnami
           targetRevision: 18.1.2
