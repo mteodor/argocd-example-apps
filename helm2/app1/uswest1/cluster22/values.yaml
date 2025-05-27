@@ -1,6 +1,6 @@
 cluster:
   name: "cluster22"
 envTag: "uswest1"
-serviceTag: "multisource"
+serviceTag: "appset"
 containerPorts:
   http: "3234"
