@@ -11,6 +11,8 @@ spec:
       revision: appset-demo
       files:
       - path: "appset-demo/**/values.yaml"
+      values:
+        appName: '{{index .path.segments 1}}'
   template:
     metadata:
       name: 'helm-{{.path.basename}}'
