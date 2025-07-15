@@ -16,8 +16,7 @@ spec:
       name: 'helm-{{.path.basename}}'
       labels:
         test: test 
-        path0: {{index .path.segments 0}}
-        path1: {{index .path.segments 1}}
+    
     spec:
       project: 04b0e9b9
       source:
