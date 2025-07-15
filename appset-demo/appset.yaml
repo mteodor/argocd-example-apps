@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: helm-k8s-app1
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: https://github.com/mteodor/argocd-example-apps.git
+      revision: appset-demo
+      files:
+      - path: "appset-demo/**/valyes.yaml"
+      values:
+        path0: {{index .path.segments 0}}
+        path1: {{index .path.segments 1}}
+  template:
+    metadata:
+      name: 'helm-{{.path.basename}}'
+      labels:
+        test: test 
+        path0: {{.values.path0}}
+    spec:
+      project: 04b0e9b9
+      source:
+        repoURL: https://github.com/mteodor/argocd-example-apps.git
+        targetRevision: '{{.releaseTag}}'
+        path: "helm-nginx"
+        helm:
+          parameters:
+            - name: version
+              value: '{{.releaseTag}}'
+      destination:
+        name: cluster11
+        namespace: mirko-demo-prod1
