@@ -15,7 +15,7 @@ spec:
         appName: '{{index .path.segments 1}}'
   template:
     metadata:
-      name: 'helm-{{.path.basename}}'
+      name: 'helm-{{.values.appName}}-{{.path.basename}}'
       labels:
         test: test 
         path0: '{{index .path.segments 0}}'
