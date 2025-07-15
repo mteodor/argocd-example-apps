@@ -10,7 +10,7 @@ spec:
       repoURL: https://github.com/mteodor/argocd-example-apps.git
       revision: appset-demo
       files:
-      - path: "appset-demo/**/valyes.yaml"
+      - path: "appset-demo/**/values.yaml"
       values:
         path0: {{index .path.segments 0}}
         path1: {{index .path.segments 1}}
