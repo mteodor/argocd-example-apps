@@ -25,7 +25,7 @@ spec:
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
         targetRevision: '{{.releaseTag}}'
-        path: "helm-nginx"
+        path: "helm-guestbook"
         helm:
           parameters:
             - name: version
