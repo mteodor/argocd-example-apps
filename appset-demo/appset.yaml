@@ -33,5 +33,5 @@ spec:
             - name: version
               value: '{{.releaseTag}}'
       destination:
-        name: '{{.values.cluster}}'
+        name: 'us-west1'
         namespace: mirko-sanity-demo
