@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: helm-k8s-app1
+  name: helm-k8s-app2
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
