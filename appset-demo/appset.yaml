@@ -33,4 +33,4 @@ spec:
               value: '{{.releaseTag}}'
       destination:
         name: '{{.values.cluster}}'
-        namespace: mirko-demo-prod1
+        namespace: mirko-sanity-demo
