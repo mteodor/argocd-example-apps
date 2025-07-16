@@ -21,6 +21,7 @@ spec:
       labels:
         harness.io/envRef: '{{.values.envName}}'
         harness.io/serviceRef: '{{.values.appName}}'
+        cluster: '{{.values.cluster}}'
     spec:
       project: 937fb9b4
       source:
