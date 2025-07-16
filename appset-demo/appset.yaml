@@ -32,5 +32,5 @@ spec:
             - name: version
               value: '{{.releaseTag}}'
       destination:
-        name: '{{.values.appName}}'
+        name: '{{.values.cluster}}'
         namespace: mirko-sanity-demo
