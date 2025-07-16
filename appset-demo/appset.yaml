@@ -13,13 +13,14 @@ spec:
       - path: "appset-demo/**/values.yaml"
       values:
         appName: '{{index .path.segments 1}}'
+        envName: '{{index .path.segments 2}}'
+        cluster: '{{index .path.segments 3}}'
   template:
     metadata:
       name: 'helm-{{.values.appName}}-{{.path.basename}}'
       labels:
-        test: test 
-        path0: '{{index .path.segments 0}}'
-        path1: '{{index .path.segments 1}}'
+        harness.io/envRef: '{{.values.envName}}'
+        harness.io/serviceRef: '{{.values.appName}}'
     spec:
       project: 937fb9b4
       source:
@@ -31,5 +32,5 @@ spec:
             - name: version
               value: '{{.releaseTag}}'
       destination:
-        name: cluster11
+        name: '{{.values.cluster}}'
         namespace: mirko-demo-prod1
