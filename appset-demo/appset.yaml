@@ -26,7 +26,7 @@ spec:
       project: 937fb9b4
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
-        targetRevision: '{{.releaseTag}}'
+        targetRevision: appset-demo-mirko-sanity-demo
         path: "helm-guestbook"
         helm:
           parameters:
