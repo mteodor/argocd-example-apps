@@ -8,7 +8,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/mteodor/argocd-example-apps.git
-      revision: appset-demo
+      revision: appset-demo-mirko-sanity-demo
       files:
       - path: "appset-demo/**/values.yaml"
       values:
