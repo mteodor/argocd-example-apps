@@ -14,14 +14,14 @@ spec:
       values:
         appName: '{{index .path.segments 1}}'
         envName: '{{index .path.segments 2}}'
-        cluster: '{{index .path.segments 3}}'
+        clusterName: '{{index .path.segments 3}}'
   template:
     metadata:
-      name: 'helm-{{.values.appName}}-{{.path.basename}}'
+      name: 'helm-{{.values.appName}}-{{.values.envName}}-{{.path.basename}}'
       labels:
         harness.io/envRef: '{{.values.envName}}'
         harness.io/serviceRef: '{{.values.appName}}'
-        cluster: '{{.values.cluster}}'
+        cluster: '{{.values.clusterName}}'
     spec:
       project: 937fb9b4
       source:
