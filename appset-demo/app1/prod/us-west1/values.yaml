@@ -1,7 +1,7 @@
 releaseTag: "latest"
+b:
+- name: "test"
+- name: "vest"
+- name: "brrr"
 m:
   x: 12
-b:
- - name: test
- - name: vest
- - name: best
