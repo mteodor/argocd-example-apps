@@ -1,4 +1,4 @@
-releaseTag: "latest"
+releaseTag: "v3"
 b:
 - name: "test"
 - name: "vest"
