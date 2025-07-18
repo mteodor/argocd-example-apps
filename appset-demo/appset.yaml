@@ -36,4 +36,4 @@ spec:
               value: '{{.releaseTag}}'
       destination:
         name: '{{.values.clusterName}}'
-        namespace: mirko-sanity-demo
+        namespace: 'helm-{{.values.appName}}-{{.values.envName}}-{{.path.basename}}'
