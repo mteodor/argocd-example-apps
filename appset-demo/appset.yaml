@@ -8,7 +8,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/mteodor/argocd-example-apps.git
-      revision: appset-demo-mirko-sanity-demo
+      revision: appset-demo-mirko-account-qa-cluster11
       files:
       - path: "appset-demo/**/values.yaml"
       values:
@@ -26,7 +26,7 @@ spec:
       project: 937fb9b4
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
-        targetRevision: appset-demo-mirko-sanity-demo
+        targetRevision: appset-demo-mirko-account-qa-cluster11
         path: "helm-guestbook"
         helm:
           parameters:
@@ -34,4 +34,4 @@ spec:
               value: '{{.releaseTag}}'
       destination:
         name: 'us-west1'
-        namespace: mirko-sanity-demo
+        namespace: mirko-account-qa-cluster11
