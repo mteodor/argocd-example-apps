@@ -23,7 +23,7 @@ spec:
         harness.io/serviceRef: '{{.values.appName}}'
         cluster: '{{.values.clusterName}}'
     spec:
-      project: 937fb9b4
+      project: 5b02f9dc
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
         targetRevision: appset-demo-mirko-account-qa-cluster11
