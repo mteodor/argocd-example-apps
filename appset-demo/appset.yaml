@@ -32,7 +32,8 @@ spec:
           parameters:
             - name: version
               value: '{{.releaseTag}}'
-            - image.tag: '{{.releaseTag}}'
+            - image:
+                tag: '{{.releaseTag}}'
       destination:
         name: '{{.values.clusterName}}'
         namespace: mirko-sanity-demo
