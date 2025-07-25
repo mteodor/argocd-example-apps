@@ -1,4 +1,4 @@
-releaseTag: "v5"
+releaseTag: "v2"
 b:
 - name: "test"
 - name: "vest"
