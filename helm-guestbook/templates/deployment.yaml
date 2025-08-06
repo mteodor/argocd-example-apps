@@ -19,6 +19,8 @@ spec:
       release: {{ .Release.Name }}
   template:
     metadata:
+      annotations:
+        test123: "testxxxx"
       labels:
         app: {{ template "helm-guestbook.name" . }}
         release: {{ .Release.Name }}
