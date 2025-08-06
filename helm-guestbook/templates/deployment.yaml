@@ -7,8 +7,6 @@ metadata:
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  annotations: 
-    harness.io: test
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
