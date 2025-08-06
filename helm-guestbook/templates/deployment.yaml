@@ -8,7 +8,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-    harness.io/test: test
+    harness.io/test: null
+    harness.io/test2: test2
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
