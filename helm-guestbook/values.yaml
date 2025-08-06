@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: e2eteam/gb-frontend
+  repository: platform9/gb-frontend
   tag: v5
   pullPolicy: IfNotPresent
 
