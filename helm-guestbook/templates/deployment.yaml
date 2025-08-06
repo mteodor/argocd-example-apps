@@ -20,7 +20,7 @@ spec:
   template:
     metadata:
       annotations:
-        test123: "testxxxx"
+        test1235555: "testxxxx55555"
       labels:
         app: {{ template "helm-guestbook.name" . }}
         release: {{ .Release.Name }}
