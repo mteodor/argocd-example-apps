@@ -13,9 +13,9 @@ spec:
   - list:
       elements:
       - cluster: engineering-dev
-        url: https://1.2.3.4
+        url: https://34.83.50.192
       - cluster: engineering-prod
-        url: https://2.4.6.8
+        url: https://35.233.139.33
       # - cluster: finance-preprod
       #   url: https://9.8.7.6
   template:
