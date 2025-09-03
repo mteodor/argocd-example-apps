@@ -1,29 +1,34 @@
 {{- range .Values.applications }}
 {{- $config := $.Values.config -}}
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: {{ printf "example.%s" .name | quote }}
-  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: {{ .namespace | default .name | quote }}
-    server: {{ $config.spec.destination.server | quote }}
-  project: default
-  source:
-    path: {{ .path | default .name | quote }}
-    repoURL: {{ $config.spec.source.repoURL }}
-    targetRevision: {{ $config.spec.source.targetRevision }}
-    {{- with .tool }}
-    {{- . | toYaml | nindent 4 }}
-    {{- end }}
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      prune: true
-      selfHeal: true
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - list:
+      elements:
+      - cluster: engineering-dev
+        url: https://1.2.3.4
+      - cluster: engineering-prod
+        url: https://2.4.6.8
+      - cluster: finance-preprod
+        url: https://9.8.7.6
+  template:
+    metadata:
+      name: '{{.cluster}}-guestbook'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/mteodor/argocd-example-apps
+        targetRevision: nginx-monitoring
+        path: nginx
+      destination:
+        namespace: {{ .namespace | default .name | quote }}
+        namespace: '{{.url}}'
 ---
 {{ end -}}
