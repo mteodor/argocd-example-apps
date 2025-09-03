@@ -20,7 +20,7 @@ spec:
       #   url: https://9.8.7.6
   template:
     metadata:
-      name: ""{{.cluster}}-{{ printf "example.%s" .name | quote }}""
+      name: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name | quote }}'
     spec:
       project: default
       source:
@@ -28,7 +28,7 @@ spec:
         targetRevision: nginx-monitoring
         path: nginx
       destination:
-        namespace: '{{.cluster}}-{{ printf "example.%s" .name | quote }}'
-        server: '{{.url}}'
+        namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name | quote }}'
+        server: ' "{{" }}.url{{ "}}" '
 ---
 {{ end -}}
