@@ -28,7 +28,7 @@ spec:
         targetRevision: nginx-monitoring
         path: nginx
       destination:
-        namespace: '{{.cluster}}-{{ .namespace | default .name | quote }}'
+        namespace: '{{.cluster}}-{{ printf "example.%s" .name | quote }}'
         namespace: '{{.url}}'
 ---
 {{ end -}}
