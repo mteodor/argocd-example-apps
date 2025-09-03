@@ -20,7 +20,7 @@ spec:
       #   url: https://9.8.7.6
   template:
     metadata:
-      name: '{{.cluster}}-guestbook'
+      name: '{{.cluster}}-{{ printf "example.%s" .name | quote }}'
     spec:
       project: default
       source:
@@ -29,6 +29,6 @@ spec:
         path: nginx
       destination:
         namespace: '{{.cluster}}-{{ printf "example.%s" .name | quote }}'
-        namespace: '{{.url}}'
+        server: '{{.url}}'
 ---
 {{ end -}}
