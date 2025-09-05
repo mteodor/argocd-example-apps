@@ -10,16 +10,16 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - clusters:
-      selector:
-        matchLabels:
-          argocd.argoproj.io/secret-type: cluster
-  # - list:
-  #     elements:
-  #     - cluster: engineering-dev
-  #       url: https://34.83.50.192
-  #     - cluster: engineering-prod
-  #       url: https://35.233.139.33
+  - matrix:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+    - list:
+        elements:
+        - cluster: engineering-dev
+
+          
       # - cluster: finance-preprod
       #   url: https://9.8.7.6
   template:
@@ -33,6 +33,6 @@ spec:
         path: nginx
       destination:
         namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
-        server: '{{ "{{" }}.url{{ "}}" }}'
+        server: '{{ "{{" }}.server{{ "}}" }}'
 ---
 {{ end -}}
