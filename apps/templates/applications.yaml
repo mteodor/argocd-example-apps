@@ -10,12 +10,16 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - list:
-      elements:
-      - cluster: engineering-dev
-        url: https://34.83.50.192
-      - cluster: engineering-prod
-        url: https://35.233.139.33
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+  # - list:
+  #     elements:
+  #     - cluster: engineering-dev
+  #       url: https://34.83.50.192
+  #     - cluster: engineering-prod
+  #       url: https://35.233.139.33
       # - cluster: finance-preprod
       #   url: https://9.8.7.6
   template:
