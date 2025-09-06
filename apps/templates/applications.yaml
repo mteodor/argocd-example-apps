@@ -128,9 +128,9 @@ spec:
     spec:
       project: {{ $config.project }}
       source:
-        repoURL: https://github.com/mteodor/argocd-example-apps
+        repoURL: {{ $config.repoURL }}
         targetRevision: {{ $config.targetRevision }}
-        path: nginx
+        path: {{ $config.path }}
       destination:
         namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
         server: '{{ "{{" }}.server{{ "}}" }}'
