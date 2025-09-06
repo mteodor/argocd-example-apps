@@ -134,5 +134,12 @@ spec:
       destination:
         namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
         server: '{{ "{{" }}.server{{ "}}" }}'
+      syncPolicy:
+        syncOptions:
+        - Replace=true
+        - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
 ---
 {{ end -}}
