@@ -11,17 +11,18 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - matrix:
-    - clusters:
-        selector:
-          matchLabels:
-            argocd.argoproj.io/secret-type: cluster
-    - list:
-        elements:
-        - cluster: engineering-dev
-
-          
-      # - cluster: finance-preprod
-      #   url: https://9.8.7.6
+      generators:
+        - clusters:
+            selector:
+              matchLabels:
+                argocd.argoproj.io/secret-type: cluster
+        - list:
+            elements:
+            - cluster: engineering-dev
+    
+              
+          # - cluster: finance-preprod
+          #   url: https://9.8.7.6
   template:
     metadata:
       name: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
