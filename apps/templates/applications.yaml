@@ -129,7 +129,7 @@ spec:
       project: {{ $config.project }}
       source:
         repoURL: https://github.com/mteodor/argocd-example-apps
-        targetRevision: nginx-monitoring
+        targetRevision: {{ $config.targetRevision }}
         path: nginx
       destination:
         namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
