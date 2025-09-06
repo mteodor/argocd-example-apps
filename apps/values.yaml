@@ -1,5 +1,6 @@
 config:
   namespace: argocd
+  targetRevision: app-of-appsets
   project: default
   spec:
     destination:
