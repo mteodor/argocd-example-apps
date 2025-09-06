@@ -131,6 +131,11 @@ spec:
         repoURL: {{ $config.repoURL }}
         targetRevision: {{ $config.targetRevision }}
         path: {{ $config.path }}
+        helm:
+          values: |
+            someValue: {{ .cluster }}
+            name: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
+            namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
       destination:
         namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example.%s" .name }}'
         server: '{{ "{{" }}.server{{ "}}" }}'
