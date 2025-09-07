@@ -118,13 +118,10 @@ spec:
               - cluster: engineering-dev98
               - cluster: engineering-dev99
               - cluster: engineering-dev100
-    
-              
-          # - cluster: finance-preprod
-          #   url: https://9.8.7.6
+
   template:
     metadata:
-      name: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "childccc-%s" .name }}'
+      name: '{{ "{{" }}.nameNormalized{{ "}}" }}-{{ "{{" }}.cluster{{ "}}" }}-{{ printf "childccc-%s" .name }}'
     spec:
       project: {{ $config.project }}
       source:
