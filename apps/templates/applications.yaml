@@ -133,7 +133,7 @@ spec:
         path: {{ $config.path }}
         helm:
           values: |
-            someValue: {'{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
+            someValue: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
             name: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
             namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
       destination:
