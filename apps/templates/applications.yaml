@@ -57,7 +57,7 @@ spec:
               - cluster: eng-dev37
               - cluster: eng-dev38
               - cluster: eng-dev39
-              - cluster: eng-dev40
+              - cluster: ceng-dev40
               - cluster: eng-dev41
               - cluster: eng-dev42
               - cluster: eng-dev43
