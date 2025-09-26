@@ -14,6 +14,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
     app.kubernetes.io/version: "v3.1.4"
+    gitops-agent: "true"
 ---
 # Source: argo-cd/templates/argocd-applicationset/serviceaccount.yaml
 apiVersion: v1
