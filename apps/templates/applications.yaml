@@ -19,6 +19,7 @@ spec:
         - list:
             elements:
               - cluster: eng-dev1
+                server: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{ "{{" }}.nameNormalized{{ "}}" }}-{{ "{{" }}.cluster{{ "}}" }}-{{ printf "ccc-%s" .name }}'
