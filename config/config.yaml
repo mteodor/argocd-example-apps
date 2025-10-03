@@ -1,6 +1,7 @@
-apiVersion: v1
-data:
-  AGENT_HTTP_TARGET: https://app.harness.io/gitops
+kind: ConfigMap 
+apiVersion: v1 
 metadata:
-  labels:
-  name: gitops-agent
+  name: example-configmap 
+data:
+  # Configuration values can be set as key-value properties
+  database: mongodb
