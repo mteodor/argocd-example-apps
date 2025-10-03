@@ -1,29 +1,48 @@
 {{- range .Values.applications }}
 {{- $config := $.Values.config -}}
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: {{ printf "example.%s" .name | quote }}
-  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: {{ .namespace | default .name | quote }}
-    server: {{ $config.spec.destination.server | quote }}
-  project: default
-  source:
-    path: {{ .path | default .name | quote }}
-    repoURL: {{ $config.spec.source.repoURL }}
-    targetRevision: {{ $config.spec.source.targetRevision }}
-    {{- with .tool }}
-    {{- . | toYaml | nindent 4 }}
-    {{- end }}
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      prune: true
-      selfHeal: true
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - matrix:
+      generators:
+        - clusters:
+            selector:
+              matchLabels:
+                argocd.argoproj.io/secret-type: cluster
+        - list:
+            elements:
+              - cluster: eng-dev1
+                server: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: '{{ "{{" }}.nameNormalized{{ "}}" }}-{{ "{{" }}.cluster{{ "}}" }}-{{ printf "ccc-%s" .name }}'
+    spec:
+      project: {{ $config.project }}
+      source:
+        repoURL: {{ $config.repoURL }}
+        targetRevision: {{ $config.targetRevision }}
+        path: {{ $config.path }}
+        helm:
+          values: |
+            someValue: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
+            name: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
+            namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
+      destination:
+        namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
+        server: '{{ "{{" }}.server{{ "}}" }}'
+      syncPolicy:
+        syncOptions:
+        - Replace=true
+        - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
 ---
 {{ end -}}
