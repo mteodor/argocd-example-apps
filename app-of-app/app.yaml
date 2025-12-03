@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: test
 spec:
-  project: default
+  project: 864bc649
   source:
     chart: nginx
     repoURL: registry-1.docker.io/bitnamicharts  # note: the oci:// syntax is not included.
