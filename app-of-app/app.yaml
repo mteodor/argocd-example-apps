@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: test
   labels:
-    harness.io/envRef: helmapp
-    harness.io/serviceRef: prod1
+    harness.io/envRef: prod1
+    harness.io/serviceRef: helmapp
 spec:
   destination:
     namespace: nginx
