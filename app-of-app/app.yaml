@@ -4,10 +4,10 @@ metadata:
   labels:
     harness.io/envRef: helmappmultisource
     harness.io/serviceRef: prod1
-  name: test
+  name: test-msc
 spec:
   destination:
-    namespace: nginx
+    namespace: mirkot-redis-msc
     server: https://35.233.139.33
   project: 3ca2a422
   sources:
