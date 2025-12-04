@@ -7,7 +7,7 @@ apiVersion: "argoproj.io/v1alpha1"
 kind: "Application"
 spec:
   destination:
-    server: "https://35.233.139.33"
+    server: https://kubernetes.default.svc
     namespace: "nginx"
   project: "3ca2a422"
   source:
