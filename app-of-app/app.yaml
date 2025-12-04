@@ -1,23 +1,4 @@
 metadata:
-  name: "test"
-  labels:
-    harness.io/serviceRef: "helmapp"
-    harness.io/envRef: "prod1"
-apiVersion: "argoproj.io/v1alpha1"
-kind: "Application"
-spec:
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: "redis-test"
-  project: "3ca2a422"
-  source:
-    repoURL: "https://charts.helm.sh/stable/"
-    targetRevision: "10.5.3"
-    chart: "redis"
-    helm:
-      passCredentials: true
-
-metadata:
   name: "test2"
   labels:
     harness.io/serviceRef: "helmapp"
@@ -31,7 +12,7 @@ spec:
   project: "3ca2a422"
   source:
     repoURL: "https://charts.helm.sh/stable/"
-    targetRevision: "10.5.3"
+    targetRevision: "10.5.1"
     chart: "redis"
     helm:
       passCredentials: true
