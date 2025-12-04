@@ -20,4 +20,4 @@ spec:
       targetRevision: 10.5.7
     - ref: val
       repoURL: https://github.com/mteodor/argocd-example-apps
-      argetRevision: helm-app-test-multi-source
+      targetRevision: helm-app-test-multi-source
