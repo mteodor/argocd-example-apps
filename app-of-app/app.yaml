@@ -1,8 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  harness.io/envRef: helmappmultisource
-  harness.io/serviceRef: prod1
+  labels:
+    harness.io/envRef: helmappmultisource
+    harness.io/serviceRef: prod1
   name: test
 spec:
   destination:
