@@ -17,7 +17,6 @@ spec:
     helm:
       passCredentials: true
 
----
 metadata:
   name: "test2"
   labels:
