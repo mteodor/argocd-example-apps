@@ -3,11 +3,14 @@ kind: Application
 metadata:
   name: test
 spec:
+  destination:
+    namespace: nginx
+    server: https://35.233.139.33
   project: 864bc649
   source:
-    chart: nginx
-    repoURL: registry-1.docker.io/bitnamicharts  # note: the oci:// syntax is not included.
-    targetRevision: 15.9.0
-  destination:
-    server: https://35.233.139.33
-    namespace: nginx
+    chart: redis
+    helm:
+      passCredentials: true
+    repoURL: https://charts.helm.sh/stable
+    targetRevision: 10.5.7
+
