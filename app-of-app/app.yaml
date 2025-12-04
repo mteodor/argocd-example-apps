@@ -3,7 +3,7 @@ metadata:
   labels:
     harness.io/serviceRef: "helmapp"
     harness.io/envRef: "prod1"
-redisPort: "6378"
+redisPort: "6733"
 apiVersion: "argoproj.io/v1alpha1"
 kind: "Application"
 spec:
