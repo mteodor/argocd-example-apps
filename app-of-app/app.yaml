@@ -14,7 +14,7 @@ spec:
     - chart: redis
       helm:
         passCredentials: true
-        valuesFiles:
+        valueFiles:
           - $val/values/values.yaml
       repoURL: https://charts.helm.sh/stable/
       targetRevision: 10.5.7
