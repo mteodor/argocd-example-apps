@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: nginx
     server: https://35.233.139.33
-  project: 864bc649
+  project: 3ca2a422
   source:
     chart: redis
     helm:
