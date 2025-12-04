@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   labels:
-    harness.io/envRef: helmappmultisource
+    harness.io/envRef: helm-app-multisource
     harness.io/serviceRef: prod1
   name: test-msc
 spec:
