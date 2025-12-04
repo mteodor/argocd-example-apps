@@ -7,10 +7,14 @@ spec:
     namespace: nginx
     server: https://35.233.139.33
   project: 864bc649
-  source:
-    chart: redis
-    helm:
-      passCredentials: true
-    repoURL: https://charts.helm.sh/stable/
-    targetRevision: 10.5.7
-
+  sources:
+    - chart: redis
+      helm:
+        passCredentials: true
+        valuesFiles:
+          - $val/values/values.yaml
+      repoURL: https://charts.helm.sh/stable/
+      targetRevision: 10.5.7
+    - ref: val
+      repoURL: https://github.com/mteodor/argocd-example-apps
+      argetRevision: helm-app-test-multi-source
