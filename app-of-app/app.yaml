@@ -2,8 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: test
-  harness.io/envRef: helmapp
-  harness.io/serviceRef: prod1
+  labels:
+    harness.io/envRef: helmapp
+    harness.io/serviceRef: prod1
 spec:
   destination:
     namespace: nginx
