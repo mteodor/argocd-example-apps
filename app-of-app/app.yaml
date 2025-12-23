@@ -9,5 +9,5 @@ spec:
     repoURL: https://github.com/mteodor/argocd-example-apps
     targetRevision: master
   destination:
-    server: https://35.233.139.33
+    server: https://34.83.50.192
     namespace: nginx
