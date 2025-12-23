@@ -3,11 +3,11 @@ kind: Application
 metadata:
   name: test
 spec:
-  project: 864bc649
+  project: 8ca4aff0
   source:
-    chart: nginx
-    repoURL: registry-1.docker.io/bitnamicharts  # note: the oci:// syntax is not included.
-    targetRevision: 15.9.0
+    path: nginx
+    repoURL: https://github.com/mteodor/argocd-example-apps
+    targetRevision: master
   destination:
     server: https://35.233.139.33
     namespace: nginx
