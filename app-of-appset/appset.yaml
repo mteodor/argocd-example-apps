@@ -3,21 +3,24 @@ kind: ApplicationSet
 metadata:
   name: apps-per-cluster
 spec:
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
   generators:
     - git:
         repoURL: https://github.com/mteodor/argocd-example-apps
-        revision: HEAD
+        revision: app-of-appsets
         files:
           - path: "app-of-appset/config/*/*/appset-config.yaml"   # each file contains clusterName + app fields
   template:
     metadata:
-      name: '{{.path.segments 2}}-{{.path.segments 3}}'
+      name: te
     spec:
+      destination:
+        namespace: mirko-qa-account
+        server: "{{.server}}"
       project: d73a4830
       source:
-        repoURL: https://github.com/mteodor/argocd-example-apps
-        targetRevision: app-of-appset
         path: nginx
-      destination:
-        server: '{{server}}'
-        namespace: '{{namespace}}'
+        repoURL: https://github.com/mteodor/argocd-example-apps
+        targetRevision: app-of-appsets
