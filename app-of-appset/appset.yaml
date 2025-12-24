@@ -4,15 +4,11 @@ metadata:
   name: apps-per-cluster
 spec:
   generators:
-    - merge:
-        mergeKeys: ["clusterName"]
-        generators:
-          # 1) From Git: emit clusterName + app data (via files)
-          - git:
-              repoURL: https://github.com/mteodor/argocd-example-apps
-              revision: HEAD
-              files:
-                - path: "app-of-appset/config/*/*/appset-config.yaml"   # each file contains clusterName + app fields
+    - git:
+        repoURL: https://github.com/mteodor/argocd-example-apps
+        revision: HEAD
+        files:
+          - path: "app-of-appset/config/*/*/appset-config.yaml"   # each file contains clusterName + app fields
   template:
     metadata:
       name: '{{.path.segments 2}}-{{.path.segments 3}}'
