@@ -14,7 +14,7 @@ spec:
           - path: "app-of-appset/config/*/*/appset-config.yaml"   # each file contains clusterName + app fields
   template:
     metadata:
-      name: te
+      name: test
     spec:
       destination:
         namespace: mirko-qa-account
@@ -24,3 +24,5 @@ spec:
         path: nginx
         repoURL: https://github.com/mteodor/argocd-example-apps
         targetRevision: app-of-appsets
+      syncPolicy:
+        automated: {}
