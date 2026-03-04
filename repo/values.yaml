@@ -1,0 +1,6 @@
+namespace: argocd
+repository:
+  name: 
+  project:
+  url: 
+  type:
