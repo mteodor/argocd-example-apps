@@ -1,11 +1,11 @@
 apiVersion: v1
-data:
-  name: {{ .Values.repository.name | default "" | b64enc }}
-  project: {{ .Values.repository.project | default "" | b64enc }}
-  type: {{ .Values.repository.type | default "" | b64enc }}
-  url: {{ .Values.repository.url | default "" | b64enc }}
-  username: {{ .Values.repository.username | default "" | b64enc }}
-  password: {{ .Values.repository.password | default "" | b64enc }}
+stringData:
+  name: {{ .Values.repository.name | default "" }}
+  project: {{ .Values.repository.project | default "" }}
+  type: {{ .Values.repository.type | default "git" }}
+  url: {{ .Values.repository.url | default "" }}
+  username: {{ .Values.repository.username | default "" }}
+  password: {{ .Values.repository.password | default "" }}
 kind: Secret
 metadata:
   annotations:
