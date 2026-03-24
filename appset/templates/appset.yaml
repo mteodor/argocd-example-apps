@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: {{ $config.name | quote }}
+  name: {{ .Values.config.name | quote }}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -17,10 +17,10 @@ spec:
     metadata:
       name: '{{ "{{" }}path[2]{{ "}}" }}-{{ "{{" }}path[1]{{ "}}" }}'
     spec:
-      project: {{ $config.project }}
+      project: {{ .Values.config.project }}
       source:
-        repoURL: {{ $config.repoURL }}
-        targetRevision: {{ $config.targetRevision }}
+        repoURL: {{ .Values.config.repoURL }}
+        targetRevision: {{ .Values.config.targetRevision }}
         path: 'charts/{{ "{{" }}path[2]{{ "}}" }}'
         helm:
           valueFiles:
