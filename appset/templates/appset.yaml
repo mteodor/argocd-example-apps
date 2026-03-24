@@ -3,35 +3,42 @@ kind: ApplicationSet
 metadata:
   name: {{ .Values.config.name | quote }}
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
+
   generators:
     - git:
         repoURL: https://github.com/mteodor/argocd-example-apps.git
         revision: service-env
         files:
           - path: "env/*/*/values.yaml"
+
   template:
     metadata:
-      name: '{{ "{{" }}path[2]{{ "}}" }}-{{ "{{" }}path[1]{{ "}}" }}'
+      name: '{{ "{{" }} index .path.segments 2 {{ "}}" }}-{{ "{{" }} index .path.segments 1 {{ "}}" }}'
+
     spec:
       project: {{ .Values.config.project }}
+
       source:
         repoURL: {{ .Values.config.repoURL }}
         targetRevision: {{ .Values.config.targetRevision }}
-        path: 'charts/{{ "{{" }}path[2]{{ "}}" }}'
+        path: 'charts/{{ "{{" }} index .path.segments 2 {{ "}}" }}'
+
         helm:
           valueFiles:
-            - '../../env/{{ "{{" }}path[1]{{ "}}" }}/{{ "{{" }}path[2]{{ "}}" }}/values.yaml'
+            - '{{ "{{" }} .path.path {{ "}}" }}'
+
       destination:
-        namespace: '{{ "{{" }}path[2]{{ "}}" }}-{{ "{{" }}path[1]{{ "}}" }}'
+        namespace: '{{ "{{" }} index .path.segments 2 {{ "}}" }}-{{ "{{" }} index .path.segments 1 {{ "}}" }}'
         server: https://kubernetes.default.svc
+
       syncPolicy:
         syncOptions:
-        - Replace=true
-        - CreateNamespace=true
+          - Replace=true
+          - CreateNamespace=true
         automated:
           prune: true
           selfHeal: true
