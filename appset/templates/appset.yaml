@@ -26,7 +26,7 @@ spec:
           valueFiles:
             - '../../env/{{ "{{" }}path[1]{{ "}}" }}/{{ "{{" }}path[2]{{ "}}" }}/values.yaml'
       destination:
-        namespace: '{{ "{{" }}.cluster{{ "}}" }}-{{ printf "example-%s" .name }}'
+        namespace: '{{ "{{" }}path[2]{{ "}}" }}-{{ "{{" }}path[1]{{ "}}" }}'
         server: https://kubernetes.default.svc
       syncPolicy:
         syncOptions:
