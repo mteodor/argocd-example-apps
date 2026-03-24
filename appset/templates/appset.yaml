@@ -29,8 +29,7 @@ spec:
 
         helm:
           valueFiles:
-            - '{{ "{{" }} .path.path {{ "}}" }}'
-
+            - '../../env/{{ "{{" }} index .path.segments 1 {{ "}}" }}/{{ "{{" }} index .path.segments 2 {{ "}}" }}/values.yaml'
       destination:
         namespace: '{{ "{{" }} index .path.segments 2 {{ "}}" }}-{{ "{{" }} index .path.segments 1 {{ "}}" }}'
         server: https://kubernetes.default.svc
