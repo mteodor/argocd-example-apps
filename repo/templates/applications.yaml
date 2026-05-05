@@ -6,7 +6,7 @@ stringData:
   url: {{ .Values.repository.url | default "" }}
   username: {{ .Values.repository.username | default "" }}
   password: {{ .Values.repository.password | default "" }}
-  insecure: {{ .Values.repository.insecure | default "true" }}
+  insecure: {{ .Values.repository.insecure | default false | quote }}
 kind: Secret
 metadata:
   annotations:
