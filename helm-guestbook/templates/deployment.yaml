@@ -1,6 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
+argocd.argoproj.io/sync-options: Prune=confirm
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=confirm
   name: {{ template "helm-guestbook.fullname" . }}
   labels:
     app: {{ template "helm-guestbook.name" . }}
