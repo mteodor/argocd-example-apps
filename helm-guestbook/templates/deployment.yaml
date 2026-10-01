@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=confirm
   name: {{ template "helm-guestbook.fullname" . }}
   labels:
     app: {{ template "helm-guestbook.name" . }}
@@ -10,6 +12,7 @@ metadata:
   annotations:
     harness.io/test: null
     harness.io/test2: test2
+    argocd.argoproj.io/sync-options: Prune=confirm
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
