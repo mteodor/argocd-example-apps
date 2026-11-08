@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: e2e-aoa-child-2
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mteodor/argocd-example-apps
+    path: guestbook
+    targetRevision: master
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: e2e-aoa-child-2
