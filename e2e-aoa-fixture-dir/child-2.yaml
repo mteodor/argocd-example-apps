@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: e2e-aoa-child-2
+  namespace: argocd
+spec:
+  project: e2e-proj
+  source:
+    repoURL: https://github.com/mteodor/argocd-example-apps
+    path: guestbook
+    targetRevision: e2e-aoa-fixture
+  destination:
+    server: https://unrelated.example.invalid:6443
+    namespace: e2e-aoa-child-2-ns
